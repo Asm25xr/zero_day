@@ -1,2 +1,7 @@
 #!/bin/bash
-ls
+
+# Get the current user's home directory
+home_dir=$(getent passwd "$(whoami)" | cut -d: -f6)
+
+# Change the working directory to the home directory
+cd "$home_dir"
